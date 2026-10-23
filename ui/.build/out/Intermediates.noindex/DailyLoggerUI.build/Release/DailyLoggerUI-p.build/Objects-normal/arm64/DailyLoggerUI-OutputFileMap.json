@@ -1,0 +1,26 @@
+{
+  "" : {
+    "const-values" : "/Users/ayushtomar/logger/ui/.build/out/Intermediates.noindex/DailyLoggerUI.build/Release/DailyLoggerUI-p.build/Objects-normal/arm64/DailyLoggerUI-primary.swiftconstvalues",
+    "dependencies" : "/Users/ayushtomar/logger/ui/.build/out/Intermediates.noindex/DailyLoggerUI.build/Release/DailyLoggerUI-p.build/Objects-normal/arm64/DailyLoggerUI-primary.d",
+    "diagnostics" : "/Users/ayushtomar/logger/ui/.build/out/Intermediates.noindex/DailyLoggerUI.build/Release/DailyLoggerUI-p.build/Objects-normal/arm64/DailyLoggerUI-primary.dia",
+    "emit-module-dependencies" : "/Users/ayushtomar/logger/ui/.build/out/Intermediates.noindex/DailyLoggerUI.build/Release/DailyLoggerUI-p.build/Objects-normal/arm64/DailyLoggerUI-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/ayushtomar/logger/ui/.build/out/Intermediates.noindex/DailyLoggerUI.build/Release/DailyLoggerUI-p.build/Objects-normal/arm64/DailyLoggerUI-primary-emit-module.dia",
+    "pch" : "/Users/ayushtomar/logger/ui/.build/out/Intermediates.noindex/DailyLoggerUI.build/Release/DailyLoggerUI-p.build/Objects-normal/arm64/DailyLoggerUI-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/ayushtomar/logger/ui/.build/out/Intermediates.noindex/DailyLoggerUI.build/Release/DailyLoggerUI-p.build/Objects-normal/arm64/DailyLoggerUI-primary.swiftdeps"
+  },
+  "/Users/ayushtomar/logger/ui/Sources/DailyLogger/Services/ProcessRunner.swift" : {
+    "index-unit-output-path" : "/DailyLoggerUI.build/Release/DailyLoggerUI-p.build/Objects-normal/arm64/ProcessRunner.o",
+    "llvm-bc" : "/Users/ayushtomar/logger/ui/.build/out/Intermediates.noindex/DailyLoggerUI.build/Release/DailyLoggerUI-p.build/Objects-normal/arm64/ProcessRunner.bc",
+    "object" : "/Users/ayushtomar/logger/ui/.build/out/Intermediates.noindex/DailyLoggerUI.build/Release/DailyLoggerUI-p.build/Objects-normal/arm64/ProcessRunner.o"
+  },
+  "/Users/ayushtomar/logger/ui/Sources/DailyLogger/Views/FloatingPromptView.swift" : {
+    "index-unit-output-path" : "/DailyLoggerUI.build/Release/DailyLoggerUI-p.build/Objects-normal/arm64/FloatingPromptView.o",
+    "llvm-bc" : "/Users/ayushtomar/logger/ui/.build/out/Intermediates.noindex/DailyLoggerUI.build/Release/DailyLoggerUI-p.build/Objects-normal/arm64/FloatingPromptView.bc",
+    "object" : "/Users/ayushtomar/logger/ui/.build/out/Intermediates.noindex/DailyLoggerUI.build/Release/DailyLoggerUI-p.build/Objects-normal/arm64/FloatingPromptView.o"
+  },
+  "/Users/ayushtomar/logger/ui/Sources/DailyLogger/main.swift" : {
+    "index-unit-output-path" : "/DailyLoggerUI.build/Release/DailyLoggerUI-p.build/Objects-normal/arm64/main.o",
+    "llvm-bc" : "/Users/ayushtomar/logger/ui/.build/out/Intermediates.noindex/DailyLoggerUI.build/Release/DailyLoggerUI-p.build/Objects-normal/arm64/main.bc",
+    "object" : "/Users/ayushtomar/logger/ui/.build/out/Intermediates.noindex/DailyLoggerUI.build/Release/DailyLoggerUI-p.build/Objects-normal/arm64/main.o"
+  }
+}

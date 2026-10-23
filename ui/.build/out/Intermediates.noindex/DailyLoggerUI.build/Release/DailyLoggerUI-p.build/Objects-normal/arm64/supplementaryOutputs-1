@@ -1,0 +1,11 @@
+{
+  "/Users/ayushtomar/logger/ui/Sources/DailyLogger/Services/ProcessRunner.swift" : {
+    "abi-baseline-json" : "/Users/ayushtomar/logger/ui/.build/out/Intermediates.noindex/DailyLoggerUI.build/Release/DailyLoggerUI-p.build/Objects-normal/arm64/DailyLoggerUI.abi.json",
+    "const-values" : "/Users/ayushtomar/logger/ui/.build/out/Intermediates.noindex/DailyLoggerUI.build/Release/DailyLoggerUI-p.build/Objects-normal/arm64/DailyLoggerUI-primary.swiftconstvalues",
+    "dependencies" : "/Users/ayushtomar/logger/ui/.build/out/Intermediates.noindex/DailyLoggerUI.build/Release/DailyLoggerUI-p.build/Objects-normal/arm64/DailyLoggerUI-primary.d",
+    "diagnostics" : "/Users/ayushtomar/logger/ui/.build/out/Intermediates.noindex/DailyLoggerUI.build/Release/DailyLoggerUI-p.build/Objects-normal/arm64/DailyLoggerUI-primary.dia",
+    "swiftdoc" : "/Users/ayushtomar/logger/ui/.build/out/Intermediates.noindex/DailyLoggerUI.build/Release/DailyLoggerUI-p.build/Objects-normal/arm64/DailyLoggerUI.swiftdoc",
+    "swiftmodule" : "/Users/ayushtomar/logger/ui/.build/out/Intermediates.noindex/DailyLoggerUI.build/Release/DailyLoggerUI-p.build/Objects-normal/arm64/DailyLoggerUI.swiftmodule",
+    "swiftsourceinfo" : "/Users/ayushtomar/logger/ui/.build/out/Intermediates.noindex/DailyLoggerUI.build/Release/DailyLoggerUI-p.build/Objects-normal/arm64/DailyLoggerUI.swiftsourceinfo"
+  }
+}

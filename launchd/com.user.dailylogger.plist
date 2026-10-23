@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.user.dailylogger</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <!-- Replace with installed executable path (e.g. ~/.local/bin/DailyLoggerUI or /usr/local/bin/DailyLoggerUI) -->
+        <string>/Users/ayushtomar/logger/ui/.build/release/DailyLoggerUI</string>
+    </array>
+
+    <!-- Trigger at 02:00 AM daily. If asleep at 2 AM, launchd triggers automatically upon wake. -->
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key>
+        <integer>2</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+
+    <key>StandardOutPath</key>
+    <string>/tmp/DailyLogger.stdout.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/tmp/DailyLogger.stderr.log</string>
+
+    <key>ProcessType</key>
+    <string>Interactive</string>
+</dict>
+</plist>
