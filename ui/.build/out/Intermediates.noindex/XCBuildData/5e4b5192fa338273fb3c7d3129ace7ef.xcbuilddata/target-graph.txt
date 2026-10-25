@@ -1,2 +1,0 @@
-Target dependency graph (1 target)
-Target 'DailyLoggerUI-product' in project 'DailyLoggerUI' (no dependencies)

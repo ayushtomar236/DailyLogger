@@ -1,4 +1,0 @@
-Target dependency graph (2 targets)
-Target 'AllExcludingTests' in project 'Aggregate'
-➜ Explicit dependency on target 'DailyLoggerUI-product' in project 'DailyLoggerUI'
-Target 'DailyLoggerUI-product' in project 'DailyLoggerUI' (no dependencies)

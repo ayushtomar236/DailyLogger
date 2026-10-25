@@ -69,26 +69,28 @@ cd logger
 ./setup.sh
 ```
 
-The script compiles the release binary to `bin/DailyLoggerUI` and configures the macOS LaunchAgent.
+The script compiles the release binary to `bin/DailyLoggerUI`, configures the LaunchAgent, and automatically registers it with macOS `launchd`.
 
-### 3. Enable the Scheduled Trigger
-Activate the background schedule:
+### 3. Verify System Health
+Check that the trigger service is active and operational:
 
 ```bash
-launchctl load ~/Library/LaunchAgents/com.user.dailylogger.plist
-```
-
-To verify it is active:
-```bash
-launchctl list | grep com.user.dailylogger
+./bin/DailyLoggerUI --status
 ```
 
 ---
 
 ## 💻 Usage
 
+### Check System Status & Diagnostics
+Inspect the health of the LaunchAgent registration, plist configuration, today's log status, and log outputs:
+
+```bash
+./bin/DailyLoggerUI --status
+```
+
 ### Launching Manually / Testing the UI
-Want to test the prompt right now without waiting for 2:00 AM?
+Want to test the prompt right now without waiting for the scheduled time?
 
 ```bash
 ./bin/DailyLoggerUI --force
@@ -138,6 +140,33 @@ Each entry is an independent, single-line JSON object:
 
 ## ⚙️ Configuration
 
+### Schedule Configuration
+
+You can customize the daily trigger time by creating a `~/.dailylogger.json` file in your home directory:
+
+```json
+{
+  "hour": 22,
+  "minute": 30
+}
+```
+
+- `hour`: Integer from `0` to `23` (24-hour format). Default is `2` (02:00 AM).
+- `minute`: Integer from `0` to `59`. Default is `0`.
+
+Run `./setup.sh` to apply your schedule changes:
+```bash
+./setup.sh
+```
+
+You can also override the schedule during setup via environment variables:
+
+```bash
+DAILY_LOGGER_HOUR=23 DAILY_LOGGER_MINUTE=0 ./setup.sh
+```
+
+### Environment Variables
+
 You can customize behavior using environment variables:
 
 | Variable | Description | Default |
@@ -145,6 +174,8 @@ You can customize behavior using environment variables:
 | `DAILY_LOG_FILE` | Custom path to the `.txt` database file | `<repo-root>/daily_logs.txt` |
 | `LOGGER_PYTHON_PATH` | Path to a specific Python 3 interpreter | Auto-detected (`python3`) |
 | `LOGGER_BACKEND_SCRIPT` | Path to `backend/logger.py` | Auto-detected relative to executable |
+| `DAILY_LOGGER_HOUR` | Override trigger hour during `setup.sh` | Value from `~/.dailylogger.json` or `2` |
+| `DAILY_LOGGER_MINUTE` | Override trigger minute during `setup.sh` | Value from `~/.dailylogger.json` or `0` |
 
 Example:
 ```bash
