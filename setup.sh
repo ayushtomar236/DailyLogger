@@ -20,7 +20,11 @@ echo "  ✓ swift found: $(swift --version | head -n 1)"
 echo "[2/4] Building Swift UI application in release mode..."
 mkdir -p "$BIN_DIR"
 swift build -c release --package-path "$REPO_ROOT/ui"
-RELEASE_BIN="$REPO_ROOT/ui/.build/release/DailyLoggerUI"
+RELEASE_BIN="$(swift build --show-bin-path -c release --package-path "$REPO_ROOT/ui")/DailyLoggerUI"
+
+if [ ! -f "$RELEASE_BIN" ]; then
+    RELEASE_BIN="$REPO_ROOT/ui/.build/release/DailyLoggerUI"
+fi
 
 if [ ! -f "$RELEASE_BIN" ]; then
     echo "Error: Failed to find compiled binary at $RELEASE_BIN" >&2

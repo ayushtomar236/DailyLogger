@@ -5,17 +5,26 @@ import UserNotifications
 final class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
     static let shared = NotificationManager()
 
-    private let center = UNUserNotificationCenter.current()
     private let notificationIdentifier = "com.user.dailylogger.prompt"
-
     weak var window: NSWindow?
+
+    private var isSupported: Bool {
+        Bundle.main.bundleIdentifier != nil
+    }
+
+    private lazy var center: UNUserNotificationCenter? = {
+        guard isSupported else { return nil }
+        let c = UNUserNotificationCenter.current()
+        c.delegate = self
+        return c
+    }()
 
     override init() {
         super.init()
-        center.delegate = self
     }
 
     func requestAuthorization() {
+        guard let center = center else { return }
         center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
             if let error = error {
                 print("Notification authorization error: \(error)")
@@ -24,6 +33,16 @@ final class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
     }
 
     func postPromptNotification() {
+        guard let center = center else {
+            // Standalone binary fallback: send native macOS notification via osascript
+            let script = "display notification \"Time to log what you did today\" with title \"Daily Reflection\""
+            let process = Process()
+            process.executableURL = URL(fileURLWithPath: "/usr/bin/osascript")
+            process.arguments = ["-e", script]
+            try? process.run()
+            return
+        }
+
         let content = UNMutableNotificationContent()
         content.title = "Daily Reflection"
         content.body = "Time to log what you did today"
@@ -43,6 +62,7 @@ final class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
     }
 
     func removeDeliveredNotifications() {
+        guard let center = center else { return }
         center.removeDeliveredNotifications(withIdentifiers: [notificationIdentifier])
         center.removePendingNotificationRequests(withIdentifiers: [notificationIdentifier])
     }
